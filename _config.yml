@@ -1,0 +1,37 @@
+
+title: Sanfy.In - Art of Programming!!
+email: me@sanfy.in
+description: > # this means to ignore newlines until "baseurl:"
+  We at Sanfy, learn new technologies, do research and share the knowlede.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://ubuntu-sanz86.c9users.io:8080" # the base hostname & protocol for your site, e.g. http://example.com
+url2: "http://ubuntu-sanz86.c9users.io:8080"
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title/
+paginate: 5
+paginate_path: "blog/page:num/"
+
+# Comments
+disqus-shortname: blog-sanfy-in
+
+#social
+facebook: http://facebook.com/sanfyin
+linkedin: http://linkedin.com
+twitter: http://twitter.com/sanfyin
+github: http://github.com/sanfyin
+
+#facebook like box
+fb-app-id: 549480635219583
+fb-page-url: https://www.facebook.com/sanfyin/
+fb-page-title: Sanfy.In
+
+gems: [jekyll-paginate, jekyll-seo-tag, jekyll-github-metadata, jekyll-mentions, jekyll-redirect-from, jekyll-sitemap, jemoji, jekyll-feed]
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
