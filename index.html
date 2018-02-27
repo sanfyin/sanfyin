@@ -1,0 +1,157 @@
+---
+layout: default
+title: Sanfy.In - Art of Programming!!
+---
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="banner-content">
+                        <h6><i>"Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."</i> </h6>
+                        
+                        <h6>- Linus Torvalds</h6>
+                        <br>
+                        <ul class="buttons">
+                            <li>
+                                <div class="secondary-button">
+                                    <a href="#blog">Let's Learn and Code</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>We trive to learn new ways to write better code and sharing the knowledge for benefit of the community!!</h4>
+                    <h6>We are working on Web, Mobile as well as Desktop Technologies.</h6>
+                    <div class="border-button"><a href="#blog">Discover More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="tabs-content" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Latest Blog Entries</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    <div class="col-md-6">
+                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+
+                            {% for i in (1..5) %}
+                            {% assign idx = i | minus:1 %}
+                            
+                            {% if site.posts[idx] %}
+                            <li><a href="#tab{{ i }}" {% if i == 1 %}class="active" {% endif %}>
+                                {{ site.posts[idx].title }}
+                                <ul class="info-post">
+                                    <li><i class="fa fa-user"></i>{{ site.posts[idx].author }}</li>
+                                    <li><i class="fa fa-calendar"></i>{{ site.posts[idx].date | date: "%B %d, %Y" }}</li>
+                                    <li><i class="fa fa-wechat"></i>12 Comments</li>
+                                </ul>
+                            </a></li>
+                            {% endif %}
+                            
+                            {% endfor %}
+                        </ul>
+                        
+                        <div class="secondary-button"><a href="blog">Discover More</a></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="first-tab-group" class="tabgroup">
+                            {% for i in (1..5) %}
+                            {% assign idx = i | minus:1 %}
+                            {% if site.posts[idx] %}
+                            <div id="tab{{ i }}">
+                                <img src="img/{{ site.posts[idx].image }}" alt="{{ site.posts[idx].title }}">
+                                <div class="text-content">
+                                    <h4>{{ site.posts[idx].title }}</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fab fa-user"></i>{{ site.posts[idx].author }}</li>
+                                        <li><i class="fab fa-calendar"></i>{{ site.posts[idx].date | date: "%B %d, %Y" }}</li>
+                                        <li><i class="fab fa-wechat"></i>12 Comments</li>
+                                    </ul>
+                                    <p>{{ site.posts[idx].excerpt }}</p>
+                                    <div class="primary-button"><a href="{{ site.posts[idx].url }}">Continue Reading</a></div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-left-text">
+                        <h4>Want to know more about us</h4>
+                        <p>Please fill the form and we will get back to you.</p>
+                    </div>
+
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="contact-left-text">
+                        <h4>Leave us a Note</h4>
+                    </div>
+                    <form id="contact" action="#" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Name..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Email..." required="">
+                              </fieldset>
+                            </div>
+                             <div class="col-md-6">
+                              <fieldset>
+                                <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="phone" type="phone" class="form-control" id="phone" placeholder="Phone..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message..." required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="btn">Send your message</button>
+                              </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    

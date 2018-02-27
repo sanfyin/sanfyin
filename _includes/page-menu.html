@@ -1,0 +1,30 @@
+<div class="site-main" id="sTop">
+    <div class="site-header">
+        <div class="main-header-page">
+            <div class="container">
+                <div id="menu-wrapper">
+                    <div class="row">
+                        <nav class="navbar navbar-inverse" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="#top" class="navbar-brand">Sanfy.In</a>
+                                <div id="main-nav" class="collapse navbar-collapse">
+                                    <ul class="menu-first nav navbar-nav" style="margin-right: 20px;">
+                                        <li {% if page.menu-name == "All-Blogs" %}class="active" {% endif %}><a href="/">Home</a></li>
+                                        <li {% if page.menu-name == "Blog" %}class="active" {% endif %}><a href="blog">Latest Blogs</a></li>
+                                        <li {% if page.menu-name == "Categories" %}class="active" {% endif %}><a href="categories">Categories</a></li>                                 
+                                    </ul>                                    
+                                </div> <!-- /.main-menu -->
+                            </div>
+                        </nav>
+                    </div> <!-- /.row -->
+                </div> <!-- /#menu-wrapper -->                        
+            </div> <!-- /.container -->
+        </div> <!-- /.main-header -->
+    </div> <!-- /.site-header -->
+</div> <!-- /.site-main -->
