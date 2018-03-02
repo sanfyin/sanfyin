@@ -6,8 +6,8 @@ layout: page
         <div class="container">
             <div class="row">
                 <div class="wrapper">
-                    <div class="col-md-9">
-                        <div id="post" class="tabgroup">
+                    <div id="post"  class="col-md-9">
+                        <div class="tabgroup">
                             
                             {% if page.image %}
                             <img src="{{ site.url2 }}/img/{{ page.image }}" alt="{{ page.title }}">
@@ -17,8 +17,8 @@ layout: page
                                 <ul class="info-post">
                                     <li><i class="fa fa-user"></i>{{ page.author }}</li>
                                     <li><i class="fa fa-calendar"></i>{{ page.date | date: "%B %d, %Y" }}</li>
-                                    <li><i class="fa fa-wechat"></i>12 Comments</li>
-                                    <span class="disqus-comment-count" data-disqus-url="{{ page.url }}">First article</span>
+                                    <li><i class="fa fa-wechat"></i><a class="comments" href="{{ page.url }}#disqus_thread"></a></li>
+                                    
                                 </ul>
                                 <p>{{ page.excerpt }}</p>
                                 
@@ -71,30 +71,29 @@ layout: page
                         
                     </div>
 
-                    <div class="col-md-3">
-                        <div id="post-side" class="tabgroup">
-                            <div class="post-text-content">
-                            <h2>Related Post</h2>
+                    <div id="post-side" class="col-md-3">
+                        <div class="tabgroup">
+                            <div class="text-content">
                             {% for category_name in page.categories limit:1 %}
-                            
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <ul>
+                                <h4>Related Posts</h4>
+                                <hr>
+                                    <div class="side-bar-item">  
                                         {% for post in site.categories[category_name] limit:5 %}
                                         
-                                        
-                                            <li class=""><a href="{{ post.url }}">{{ post.title }}</a></li>
-                                        
-                                        
+                                            {% if post.url != page.url %}
+                                            <span><a href="{{ post.url }}">{{ post.title }}</a> Published on {{ page.date | date: "%B %d, %Y" }}</span>
+                                            <hr>
+                                            {% endif %}
+
                                         {% endfor %}
-                                        </ul>
                                     </div>
-                                </div>
-                            
                             {% endfor %}
-                            
                             </div>
                         </div>
+                        <br>
+                        
+                        <div class="fb-page" data-href="https://www.facebook.com/sanfyin/" data-width="420"></div>
+                        
                     </div>
 
                 </div>

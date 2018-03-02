@@ -4,7 +4,7 @@
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h4>Our Blog Entries</h4>
-                        <p>Aliquam neque neque, commodo in euismod id, lobortis in lacus. Duis interdum sagittis velit, fermentum tincidunt lectus. Nam ornare turpis.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -23,9 +23,8 @@
                                 <ul class="info-post">
                                     <li><i class="fa fa-user"></i>{{ paginator.posts[idx].author }}</li>
                                     <li><i class="fa fa-calendar"></i>{{ paginator.posts[idx].date | date: "%B %d, %Y" }}</li>
-                                    <li><i class="fa fa-wechat"></i>12 Comments</li>
-                                </ul>
-                            </a></li>
+                                </ul></a>
+                            </li>
                             {% endif %}
                             
                             {% endfor %}
@@ -71,7 +70,7 @@
                                     <ul class="info-post">
                                         <li><i class="fa fa-user"></i>{{ paginator.posts[idx].author }}</li>
                                         <li><i class="fa fa-calendar"></i>{{ paginator.posts[idx].date | date: "%B %d, %Y" }}</li>
-                                        <li><i class="fa fa-wechat"></i>12 Comments</li>
+                                        <li><i class="fa fa-wechat"></i><a class="comments" href="{{ paginator.posts[idx].url }}#disqus_thread"></a></li>
                                     </ul>
                                     <p>{{ paginator.posts[idx].excerpt }}</p>
                                     <div class="primary-button"><a href="{{ paginator.posts[idx].url }}">Continue Reading</a></div>

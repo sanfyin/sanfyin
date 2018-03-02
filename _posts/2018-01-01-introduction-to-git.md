@@ -4,7 +4,6 @@ title: Introduction to Git
 image: blog-post-1.jpg
 author: Sanfy
 date: 2018-01-01 12:00
-excerpt: La croix kombucha bespoke dreamcatcher, tumeric tbh quinoa micro dosing gastro pub. 8-bit freegan chartreuse synth jean shorts farm to table, cold pressed authen tic. Mixtape hella beard meditation, Pok pok meh tote bag single-origin coffee, everyday carry unicorn raw denim distillery cray pork belly taxidermy organic polaroid.
 category: git
 ---
 

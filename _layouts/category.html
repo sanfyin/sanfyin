@@ -1,0 +1,76 @@
+---
+layout: page
+---
+
+{% assign posts =  site.categories[page.category] %}
+{% assign post_count = 0 %}
+
+
+{% for category in site.categories %}
+{% assign category_name = category | first %}
+{% if page.category == category_name %} {% assign post_count = category | last | size %} {% endif %}
+{% endfor %} 
+
+<section class="tabs-content" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Blog Entries for Category <strong>{{ page.category }}</strong></h4>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="wrapper">
+                    
+                    <div class="col-md-6">
+                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+
+                            {% for i in (1..post_count) %}
+                            {% assign idx = i | minus:1 %}
+                            
+                            {% if posts[idx] %}
+                            <li><a href="#tab{{ i }}" {% if i == 1 %}class="active" {% endif %}>
+                                {{ posts[idx].title }}
+                                <ul class="info-post">
+                                    <li><i class="fa fa-user"></i>{{ posts[idx].author }}</li>
+                                    <li><i class="fa fa-calendar"></i>{{ posts[idx].date | date: "%B %d, %Y" }}</li>
+                                </ul></a>
+                            </li>
+                            {% endif %}
+                            
+                            {% endfor %}
+                        </ul>
+                       
+                    
+                    </div>
+                    <div class="col-md-6">
+                        <div id="first-tab-group" class="tabgroup">
+                            
+                            {% for i in (1..post_count) %}
+                            {% assign idx = i | minus:1 %}
+                            {% if posts[idx] %}
+                            <div id="tab{{ i }}">
+                                <img src="img/{{ posts[idx].image }}" alt="{{ posts[idx].title }}">
+                                <div class="text-content">
+                                    <h4>{{ posts[idx].title }}</h4>
+                                    <ul class="info-post">
+                                        <li><i class="fa fa-user"></i>{{ posts[idx].author }}</li>
+                                        <li><i class="fa fa-calendar"></i>{{ posts[idx].date | date: "%B %d, %Y" }}</li>
+                                        <li><i class="fa fa-wechat"></i><a class="comments" href="{{ posts[idx].url }}#disqus_thread"></a></li>
+                                    </ul>
+                                    <p>{{ posts[idx].excerpt }}</p>
+                                    <div class="primary-button"><a href="{{ posts[idx].url }}">Continue Reading</a></div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>

@@ -60,7 +60,6 @@ title: Sanfy.In - Art of Programming!!
                                 <ul class="info-post">
                                     <li><i class="fa fa-user"></i>{{ site.posts[idx].author }}</li>
                                     <li><i class="fa fa-calendar"></i>{{ site.posts[idx].date | date: "%B %d, %Y" }}</li>
-                                    <li><i class="fa fa-wechat"></i>12 Comments</li>
                                 </ul>
                             </a></li>
                             {% endif %}
@@ -82,7 +81,7 @@ title: Sanfy.In - Art of Programming!!
                                     <ul class="info-post">
                                         <li><i class="fa fa-user"></i>{{ site.posts[idx].author }}</li>
                                         <li><i class="fa fa-calendar"></i>{{ site.posts[idx].date | date: "%B %d, %Y" }}</li>
-                                        <li><i class="fa fa-wechat"></i>12 Comments</li>
+                                        <li><i class="fa fa-wechat"></i><a class="comments" href="{{ site.posts[idx].url }}#disqus_thread"></a></li>
                                     </ul>
                                     <p>{{ site.posts[idx].excerpt }}</p>
                                     <div class="primary-button"><a href="{{ site.posts[idx].url }}">Continue Reading</a></div>
@@ -113,7 +112,7 @@ title: Sanfy.In - Art of Programming!!
                     <div class="contact-left-text">
                         <h4>Leave us a Note</h4>
                     </div>
-                    <form id="contact" action="#" method="post">
+                    <form id="contact" action="https://formspree.io/me@sanfy.in" method="post">
                         <div class="row">
                             <div class="col-md-6">
                               <fieldset>
@@ -122,7 +121,7 @@ title: Sanfy.In - Art of Programming!!
                             </div>
                             <div class="col-md-6">
                               <fieldset>
-                                <input name="email" type="email" class="form-control" id="email" placeholder="Email..." required="">
+                                <input name="_replyto" type="email" class="form-control" id="email" placeholder="Email..." required="">
                               </fieldset>
                             </div>
                              <div class="col-md-6">
@@ -140,6 +139,7 @@ title: Sanfy.In - Art of Programming!!
                                 <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message..." required=""></textarea>
                               </fieldset>
                             </div>
+                            <input type="hidden" name="_next" value="http://ubuntu-sanz86.c9users.io:8080/thankyou/" />
                             <div class="col-md-12">
                               <fieldset>
                                 <button type="submit" id="form-submit" class="btn">Send your message</button>
