@@ -1,34 +1,40 @@
 <section class="tabs-content" id="blog">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading">
-                        <h4>Our Blog Entries</h4>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="wrapper">
                     
-                    <div class="col-md-6">
-                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-
-                            {% for i in (1..paginator.per_page) %}
-                            {% assign idx = i | minus:1 %}
+                    <div id="post"  class="col-md-9">
+                        
+                        {% for i in (1..paginator.per_page) %}
+                        {% assign idx = i | minus:1 %}
+                        {% if paginator.posts[idx] %}
+                        
+                        <div class="tabgroup">
                             
-                            {% if paginator.posts[idx] %}
-                            <li><a href="#tab{{ i }}" {% if i == 1 %}class="active" {% endif %}>
-                                {{ paginator.posts[idx].title }}
+                            {% if paginator.posts[idx].image %}
+                            <img src="{{ site.url2 }}/img/{{ paginator.posts[idx].image }}" alt="{{ paginator.posts[idx].title }}">
+                            {% endif %}
+                            <div class="text-content">
+                                <h4>{{ paginator.posts[idx].title }}</h4>
                                 <ul class="info-post">
                                     <li><i class="fa fa-user"></i>{{ paginator.posts[idx].author }}</li>
                                     <li><i class="fa fa-calendar"></i>{{ paginator.posts[idx].date | date: "%B %d, %Y" }}</li>
-                                </ul></a>
-                            </li>
-                            {% endif %}
+                                    <li><i class="fa fa-wechat"></i><a class="comments" href="{{ paginator.posts[idx].url }}#disqus_thread"></a></li>
+                                    
+                                </ul>
+                                <p>{{ paginator.posts[idx].excerpt }}</p>
+                                
+                                <div class="primary-button"><a href="{{ paginator.posts[idx].url }}">Continue Reading</a></div>
+                                
+                            </div>
+                        </div>
+                        
+                        <br />
+                        
+                        {% endif %}
                             
-                            {% endfor %}
-                        </ul>
+                        {% endfor %}
+                        
                        
                     {% if paginator.total_pages > 1 %}
                     <ul class="pagination">
@@ -57,29 +63,27 @@
                     {% endif %}
                         
                     </div>
-                    <div class="col-md-6">
-                        <div id="first-tab-group" class="tabgroup">
+                    
+                    <div id="post-side" class="col-md-3">
+                        <div class="tabgroup">
+                            <div class="text-content">
                             
-                            {% for i in (1..paginator.per_page) %}
-                            {% assign idx = i | minus:1 %}
-                            {% if paginator.posts[idx] %}
-                            <div id="tab{{ i }}">
-                                <img src="img/{{ paginator.posts[idx].image }}" alt="{{ paginator.posts[idx].title }}">
-                                <div class="text-content">
-                                    <h4>{{ paginator.posts[idx].title }}</h4>
-                                    <ul class="info-post">
-                                        <li><i class="fa fa-user"></i>{{ paginator.posts[idx].author }}</li>
-                                        <li><i class="fa fa-calendar"></i>{{ paginator.posts[idx].date | date: "%B %d, %Y" }}</li>
-                                        <li><i class="fa fa-wechat"></i><a class="comments" href="{{ paginator.posts[idx].url }}#disqus_thread"></a></li>
-                                    </ul>
-                                    <p>{{ paginator.posts[idx].excerpt }}</p>
-                                    <div class="primary-button"><a href="{{ paginator.posts[idx].url }}">Continue Reading</a></div>
+                            <h4>Categories</h4>
+                               
+                                <hr>
+                                <div class="side-bar-item">  
+                                    <span><a href="category/git">Git</a></span>
+                                    <hr>
+                                    <span><a href="category/devops">Dev Ops</a></span>
+                                    <hr>
+                                        
                                 </div>
                             </div>
-                            {% endif %}
-                            {% endfor %}
-                            
                         </div>
+                        <br>
+                        
+                        <div class="fb-page" data-href="https://www.facebook.com/sanfyin/" data-width="420"></div>
+                        
                     </div>
                     
                 </div>
