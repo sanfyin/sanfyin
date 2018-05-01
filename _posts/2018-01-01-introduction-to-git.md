@@ -7,7 +7,7 @@ date: 2018-01-01 12:00
 category: git
 ---
 
-# Installing Git
+### Installing Git
 
 When there is no image mentioned in the front-matter, default image will be displayed. You can change this image to any other one that suits your needs.
 
