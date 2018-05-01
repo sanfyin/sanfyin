@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to Git
-image: blog-post-1.jpg
+image: git.png
 author: Sanfy
 date: 2018-01-01 12:00
 category: git
