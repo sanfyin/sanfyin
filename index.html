@@ -60,6 +60,7 @@ title: Sanfy.In - Art of Programming!!
                                 <ul class="info-post">
                                     <li><i class="fa fa-user"></i>{{ site.posts[idx].author }}</li>
                                     <li><i class="fa fa-calendar"></i>{{ site.posts[idx].date | date: "%B %d, %Y" }}</li>
+                                    <li><i class="fa fa-wechat"></i><a class="comments" href="{{ site.posts[idx].url }}#disqus_thread"></a></li>
                                 </ul>
                             </a></li>
                             {% endif %}
