@@ -4,8 +4,8 @@ email: me@sanfy.in
 description: > # this means to ignore newlines until "baseurl:"
   We at Sanfy, learn new technologies, do research and share the knowlede.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://ubuntu-sanz86.c9users.io:8080" # the base hostname & protocol for your site, e.g. http://example.com
-url2: "http://ubuntu-sanz86.c9users.io:8080"
+url: "https://www.sanfy.in" # the base hostname & protocol for your site, e.g. http://example.com
+url2: "https://www.sanfy.in"
 twitter_username: jekyllrb
 github_username:  jekyll
 
